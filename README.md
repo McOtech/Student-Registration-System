@@ -1,6 +1,6 @@
-# KSUCUMC
+# Student Registration System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
+This is a web project developed on angular and Nodejs. It implements the process of student registration in any given learning institution.
 
 ## Development server
 
