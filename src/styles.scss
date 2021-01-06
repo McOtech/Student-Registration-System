@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+$headerHeight: 1.3em;
+html {
+  height: 100%;
+
+  body {
+    height: 100%;
+
+    header {
+      min-height: $headerHeight;
+    }
+
+    main {
+      // background-color: teal;
+      // min-height: 70%;
+    }
+  }
+}

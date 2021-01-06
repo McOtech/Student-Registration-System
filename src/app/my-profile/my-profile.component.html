@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-12 mt-5 ui raised segment">
+    <div class="ui items">
+      <div class="item">
+        <div class="image">
+            <img src="assets/images/avatar.png" alt="">
+        </div>
+        <div class="content">
+            <div class="description">
+                <div class="ui red card">
+                  <div class="content pb-0">
+                      <i routerLink="/members/{{student?.id}}/edit" class="right floated blue setting icon"></i>
+                      <!-- <i *ngIf="student?.status === 0" class="right floated green heart icon"></i>
+                      <i *ngIf="student?.status === 1" class="right floated red heart icon"></i> -->
+                      <a  routerLink="/members/{{student?.id}}/edit" class="header">{{student?.fname}} {{ student?.lname}}</a>
+                      <div class="meta">
+                          <strong>{{ student?.regno}}</strong>
+                      </div>
+                      <div class="description">
+                        Gender: <strong>{{ student?.gender }}</strong><br>
+                        Year of Admission: <strong>{{ getYear(student?.created) }}</strong><br>
+                        Faculty: <strong>{{ student?.faculty}}</strong><br>
+                        Course: <strong>{{ student?.course}}</strong>
+                        <form (submit)="deleteStudent($event)" class="pt-2 ui bottom attached buttons">
+                          <input type="hidden" name="id" value="{{student?.id}}">
+                          <button class="ui red labeled icon button">
+                            <i class="trash icon"></i> Delete
+                          </button>
+                        </form>
+                      </div>
+                  </div>
+                  <div class="extra content pr-3">
+                      <span class="right floated">Date created: {{ getDate(student?.created) }}</span>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <a routerLink="/members" class="ui blue circular label">
+        <i class="ui left arrow icon"></i> Back
+      </a>
+    </div>
+  </div>
+</div>

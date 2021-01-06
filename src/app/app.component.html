@@ -1,0 +1,56 @@
+<header>
+  <nav>
+    <ul class="ui top fixed inverted borderless menu pl-1">
+      <li class="item">
+        <a href="#">
+          <img src="assets/images/avatar.png" class="ui mini avatar image" alt="">
+        </a>
+      </li>
+      <li class="item">
+        <a href="#">School Management System</a>
+      </li>
+      <ul class="right icon menu">
+        <li *ngIf="status === false" class="item">
+          <a routerLink="/login">login</a>
+        </li>
+        <li *ngIf="status === true" class="item">
+          <a (click)="logout()" href="javascript:void(0)">Logout</a>
+        </li>
+        <!-- <li class="item">
+          <a href="#">
+            <div class="user">
+              <img src="assets/images/logo.jpg" class="ui avatar image" alt=""> Voter
+            </div>
+            <div class="ui flowing popup bottom left transition hidden">
+              <div class="row">
+                <div class="col-12">
+                  <div class="d-flex align-items-center">
+                    <i class="small black user icon"></i>
+                    <a routerLink="/profile" class=" text-decoration-none text-dark" >My Profile</a>
+                  </div>
+                  <div class="ui divider  m-1"></div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex align-items-center">
+                    <i class="small black setting icon"></i>
+                    <a routerLink="/settings" class=" text-decoration-none text-dark" >Edit Profile</a>
+                  </div>
+                  <div class="ui divider m-1"></div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex align-items-center">
+                    <i class="small red sign out icon"></i>
+                    <a href="#" class=" text-decoration-none text-dark" >Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li> -->
+      </ul>
+    </ul>
+  </nav>
+</header>
+<main class="container mt-5">
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,89 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-md-8 mt-5">
+    <form (submit)="saveMemberDetails($event)" class="ui equal width form raised segment">
+      <h1 class="ui large center aligned header">Student Information</h1>
+      <input *ngIf="id !== undefined" type="hidden" id="faculty" name="faculty" value="{{ student?.faculty }}" required>
+      <input *ngIf="id === undefined" type="hidden" id="faculty" name="faculty" value="SIST" required>
+      <input *ngIf="id !== undefined" type="hidden" id="gender" name="gender" value="{{ student?.gender }}" required>
+      <input *ngIf="id === undefined" type="hidden" id="gender" name="gender" value="Male" required>
+      <div class="fields">
+        <div class="required field">
+            <label for="fname">First Name</label>
+            <div class="ui left icon input">
+              <input *ngIf="id !== undefined" value="{{ student?.fname }}" type="text" maxlength="20" placeholder="First Name" name="fname" id="fname" required>
+              <input *ngIf="id === undefined" type="text" maxlength="20" placeholder="First Name" name="fname" id="fname" required>
+              <i class="ui user icon"></i>
+            </div>
+        </div>
+        <div class="required field">
+          <label for="lname">Last Name</label>
+          <div class="ui left icon input">
+            <input *ngIf="id !== undefined" value="{{ student?.lname }}" type="text" maxlength="20" placeholder="Last Name" name="lname" id="lname" required>
+            <input *ngIf="id === undefined" type="text" maxlength="20" placeholder="Last Name" name="lname" id="lname" required>
+            <i class="ui user icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="-gender">Gender</label>
+          <select id="-gender" class="ui selection dropdown">
+            <option class="item" value="Male" selected>Male</option>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <option class="item" value="Female">Female</option>
+            </div>
+          </select>
+        </div>
+        <div class="required field">
+          <label for="-faculty">Faculty</label>
+          <select id="-faculty" class="ui selection dropdown">
+            <option class="item" value="SIST" selected>School of Information Science and Technology</option>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <option class="item" value="SPAS">School of Pure and Applied Sciences</option>
+              <option class="item" value="SASS">School of Arts and Social Sciences</option>
+              <option class="item" value="SOL">School of Law</option>
+              <option class="item" value="SOBE">School of Business and Economics</option>
+              <option class="item" value="SOHS">School of Health Sciences</option>
+              <option class="item" value="SOA">School of Agriculture</option>
+            </div>
+          </select>
+        </div>
+      </div>
+      <div class="fields">
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="code">Course Code</label>
+          <div class="ui left icon input">
+            <input *ngIf="id !== undefined" value="{{ student?.code }}" type="text" name="code" id="code" required>
+            <input *ngIf="id === undefined" type="text" name="code" id="code" required>
+            <i class="ui calendar icon"></i>
+          </div>
+        </div>
+        <div class="required field">
+          <label for="reg">Course</label>
+          <div class="ui left icon input">
+            <input *ngIf="id !== undefined" value="{{ student?.course }}" type="text" placeholder="Course" name="course" id="course" required>
+            <input *ngIf="id === undefined" type="text" placeholder="Course" name="course" id="course" required>
+            <i class="id card icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="ui bottom attached buttons">
+        <button class="ui green button">Submit</button>
+      </div>
+    </form>
+    <div *ngIf="id === undefined">
+      <a routerLink="/members" class="ui blue circular label">
+        <i class="ui left arrow icon"></i> Back
+      </a>
+    </div>
+    <div *ngIf="id !== undefined">
+      <a routerLink="/members/{{ id }}" class="ui blue circular label">
+        <i class="ui left arrow icon"></i> Back
+      </a>
+    </div>
+  </div>
+</div>
